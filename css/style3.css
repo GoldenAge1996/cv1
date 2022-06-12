@@ -1,0 +1,355 @@
+
+    :root{
+        --primary-color: black
+        ;
+        --secondary-color: blue;
+        }
+        
+    
+    
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(43, 43, 180);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+       
+    }
+    .menu-btn{
+        position: absolute;
+        right: 35px;
+        top: 35px;
+       transform: rotate(0deg);
+       transition: all 0.5s ease-out;
+       cursor: pointer;
+       z-index: 3;
+    }
+    
+    .menu-btn .lines{
+        height: 3px;
+        width: 28px;
+        background-color: white;
+        margin-top: 5px;
+    }
+    
+    .menu-btn.close{
+        transform: rotate(180deg);
+        
+    }
+    .menu-btn.close .line1{
+    transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-btn.close .line2{
+     opacity: 0;
+    }
+    .menu-btn.close .line3{
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .menuul{
+        list-style-type: none;
+      opacity: none;
+    }
+    .menuul .list a{
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+    }
+    .menuul .list a:hover{
+        color: var(--secondary-color);
+    }
+    
+    .menu{
+        visibility: hidden;
+        transition: visibility 0.5s ease-out;
+    
+    }
+    
+    .menu.show{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+       width: 100%;
+     display: flex;
+     align-items: center;
+       justify-content: center;
+       visibility: visible;
+       transition: all 0.5s ease-out;
+    }
+    
+    .menu.show .pics, .menu.show .menuul{
+    width: 50%;
+    height: 100vh;
+    
+    }
+    
+    .menu.show .menuul{
+        background-color: rgba(0, 0, 0, 0.9);
+       position: relative;
+    }
+    
+    .menu.show .menuul .move{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, -50%);
+    }
+    
+    .menu.show .pics{
+        position: relative;
+     justify-content: center;
+     align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .menu.show .pics .potfolio{
+        background-image: url('../image/Three.jpg');
+        background-size: cover;
+        background-position: top center;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        border: solid 3px var(--secondary-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .menu.show .menuul .move .list{
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+    }
+    
+    .menu.show .menuul .move .list.second a{
+        color: var(--secondary-color);
+    }
+    
+    .menuul{
+        transform: translate3d(0, -100%,0);
+    }
+    .menuul.show{
+        transform: translate3d(0, 0,0);
+        transition: all 0.5s ease-out;
+    }
+    .pics{
+        transform: translate3d(0, 100%,0);
+    }
+    .pics.show{
+        transform: translate3d(0, 0,0);
+        transition: all 0.5s ease-out;
+    }
+    
+ 
+    
+    .contain{
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        width: 500px;
+        height: 530px;
+        overflow: hidden;
+        z-index: -1;
+       border-radius: 10px;
+
+
+        
+    }
+
+   
+    
+    .imgs{
+        background-position: center center;
+    background-size: cover cover;
+       background-repeat: no-repeat;
+        display: flex;
+        transform: translateX(-500);
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .photo{
+    background-position: center center;
+    background-size: cover cover;
+      width: 500px;
+    
+        height: 500px;
+        background-repeat: no-repeat;
+      
+    }
+    
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .btn{
+        background-color: rgb(15, 15, 228);
+        color: white;
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        width: 48.8%;
+    }
+    .btn:hover{
+        opacity: 0.9;
+    }
+    
+    
+    
+    /* For my skill*/
+    *, *:before, *:after {
+        box-sizing: border-box;}
+        body{
+        padding: 0;
+        margin: 0;
+       
+        }
+        h1{
+        margin: 0;
+        padding-top: 25px;
+        text-align: center;
+        }
+        .mainzone{
+        background: #ddd;
+        border-radius: 4px;
+        height: 32px;
+        margin-top: 50px;
+        border-radius: 4px;
+        margin: 50px;
+        }
+        .progress-1{
+        background: #3498DB;
+        width: 90%;
+        height: 32px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        }
+        .progress-2{
+        background: #A04000;
+        width: 80%;
+        height: 32px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        }
+        .progress-3{
+        background: #154360;
+        width: 60%;
+        height: 32px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        }
+        .progress-4{
+        background: #5B2C6F;
+        width: 50%;
+        height: 32px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        }
+        
+        h2{
+        padding-left: 15px;
+        color: #fff;
+        margin: 0;
+        font-size: 20px;
+        text-transform: uppercase;
+        }
+        @media(max-width:400px){
+            h2{
+                line-height: 1.6;
+            }
+        }
+    
+    
+    /* Media Query For ALL*/
+    
+    @media (max-width:500px ){
+        main{
+            align-items: center;
+            justify-content: center;
+        }
+        .menu.show{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .menu.show .pics{
+            width: 100%;
+            height: 25%;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        .menu.show .menuul{
+            width: 100%;
+            height: 75%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .menuul{
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: translate3d(100%, 0,0);
+        }
+        .menuul.show{
+            transform: translate3d(0, 0,0);
+            transition: all 0.5s ease-out;
+        }
+        
+        .pics{
+            transform: translate3d(-100%, 0,0);
+        }
+        .pics.show{
+            transform: translate3d(0, 0,0);
+            transition: all 0.5s ease-out;
+        }
+        .menu.show .pics .potfolio{
+            background-image: url('../image/FB_IMG_16425906339191920.jpg');
+            background-size: cover;
+            background-position: top center;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: solid 3px var(--secondary-color);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+         
+   
+    }
+
+    @media (max-width:800px ){
+        .contain{
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            height: 530px;
+            overflow: hidden;
+            border-radius: 10px;
+            z-index: -2;
+          position: relative;
+          left: -75px;
+            margin-top: 100px;
+        }
+        .imgs{
+       
+            background-repeat: no-repeat;
+             display: flex;
+             transform: translateX(-500);
+             transition: transform 0.5s ease-in-out;
+         }
+         
+         .photo{
+         background-position: center center;
+         background-size: cover cover;
+           width: 500px;
+         
+             height: 500px;
+             background-repeat: no-repeat;
+           
+         }
+    }
+

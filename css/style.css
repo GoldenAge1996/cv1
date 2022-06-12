@@ -1,0 +1,284 @@
+
+:root{
+--primary-color: black
+;
+--secondary-color: blue;
+}
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    height: 100%;
+    margin: 0;
+    background-image: url('img/Four.jpg');
+    background-position-x: center;
+    background-position:  top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+   overflow-x: hidden;
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1,h2{
+    font-weight: 400;
+    line-height: 1.5;
+    
+}
+h1{
+    font-size: 3.5rem;
+}
+
+.second{
+    color: var(--secondary-color);
+}
+
+header{
+    position: fixed;
+top: 0;
+width: 100%;
+
+}
+
+main{
+    margin-top: 20vh;
+    padding: 4rem;
+    overflow: hidden;
+}
+
+.menu-btn{
+    position: absolute;
+    right: 35px;
+    top: 35px;
+   transform: rotate(0deg);
+   transition: all 0.5s ease-out;
+   cursor: pointer;
+   z-index: 3;
+   animation: goIn 1.2s infinite;
+}
+
+.menu-btn .lines{
+    height: 3px;
+    width: 28px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.menu-btn.close{
+    transform: rotate(180deg);
+    
+}
+.menu-btn.close .line1{
+transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-btn.close .line2{
+ opacity: 0;
+}
+.menu-btn.close .line3{
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menuul{
+    list-style-type: none;
+  opacity: none;
+ 
+}
+.menuul .list a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    z-index: 3;
+}
+.menuul .list a:hover{
+    color: var(--secondary-color);
+}
+
+.menu{
+    visibility: hidden;
+    transition: visibility 0.5s ease-out;
+
+}
+
+.menu.show{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+   width: 100%;
+ display: flex;
+ align-items: center;
+   justify-content: center;
+   visibility: visible;
+   transition: all 0.5s ease-out;
+  
+}
+
+.menu.show .pics, .menu.show .menuul{
+width: 50%;
+height: 100vh;
+
+}
+
+.menu.show .menuul{
+    background-color: rgba(0, 0, 0, 0.9);
+   position: relative;
+   z-index: 3;
+}
+
+.menu.show .menuul .move{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+}
+
+.menu.show .pics{
+    position: relative;
+ justify-content: center;
+ align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu.show .pics .potfolio{
+    background-image: url('../image/Three.jpg');
+    background-size: cover;
+    background-position:top center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 3px var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu.show .menuul .move .list{
+font-size: 25px;
+text-align: center;
+padding-bottom: 15px;
+}
+
+.menu.show .menuul .move .list.second a{
+    color: var(--secondary-color);
+}
+
+.menuul{
+    transform: translate3d(0, -100%,0);
+}
+.menuul.show{
+    transform: translate3d(0, 0,0);
+    transition: all 0.5s ease-out;
+}
+
+.pics{
+    transform: translate3d(0, 100%,0);
+}
+.pics.show{
+    transform: translate3d(0, 0,0);
+    transition: all 0.5s ease-out;
+}
+
+
+
+@keyframes goIn {
+    0%{
+transform: scale(0.90);
+    }
+   
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.txt{
+    border-right: 2px solid white;
+}
+
+
+
+/* Media Query For ALL*/
+
+@media (max-width:500px ){
+    body{
+        overflow-x: hidden;
+    }
+    main{
+        align-items: center;
+        justify-content: center;
+    }
+    .menu.show{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .menu.show .pics{
+        width: 100%;
+        height: 25%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .menu.show .menuul{
+        width: 100%;
+        height: 75%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    .menuul{
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translate3d(100%, 0,0);
+    }
+    .menuul.show{
+        transform: translate3d(0, 0,0);
+        transition: all 0.5s ease-out;
+    }
+    
+    .pics{
+        transform: translate3d(-100%, 0,0);
+    }
+    .pics.show{
+        transform: translate3d(0, 0,0);
+        transition: all 0.5s ease-out;
+    }
+    .menu.show .pics .potfolio{
+        background-image: url('../image/Three.jpg');
+        background-size: cover;
+        background-position:top  center;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        border: solid 3px var(--secondary-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

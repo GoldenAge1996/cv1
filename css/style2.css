@@ -1,0 +1,121 @@
+
+:root{
+    --primary-color: #444;
+    --secondary-color: blue;
+    }
+    
+    
+    
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(43, 43, 180);
+        overflow-x: hidden;
+    }
+
+    h2{
+        background-color: blue; 
+        display: inline-block;
+        padding: 3px 5px; 
+        border-radius: 5px;
+       
+    }
+    
+img.clo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 3px var(--secondary-color);
+    margin: auto;
+}
+
+.port{
+    display: grid;
+    grid-template-areas: 
+    'clo bio bio',
+    'job1 job2 ';
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.job1{
+    background-color: rgb(50, 50, 141);
+    margin: 5px;
+   border-radius: 5px;
+   padding: 0 10px;
+}
+.job2{
+    background-color: rgb(50, 50, 141);
+    margin: 5px;
+   border-radius: 5px;
+   padding: 0 10px;
+}
+
+.bio{
+    background-color: rgb(50, 50, 141);
+    margin: 5px;
+   border-radius: 5px;
+   padding: 0 10px;
+}
+
+.cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cont .box{
+    border: solid 3px white;
+    padding: 1.5rem 3rem;
+    display: block;
+    margin: 2rem;
+cursor: pointer;
+}
+
+.cont .box:hover{
+    border: solid 3px var(--secondary-color);
+    padding: 1rem 1.5rem;
+  transition: all 0.2s ease-out;
+}
+.cont .box:hover > *{
+    color: white;
+}
+
+
+
+.on{
+    transform: translateX(-200%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+
+
+/* 
+.on:nth-of-type(even){
+transform: translateX(-200%);
+} */
+.on.active{
+    transform: translateX(0);
+    }
+
+
+
+@media (max-width: 500px){
+    body{
+        overflow-y: scroll;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    .port{
+        grid-template-areas: 
+    'img',
+    'bio',
+    'job1',
+    'job2',
+    'job3'
+    ;
+    grid-template-columns: 1fr;
+}
+}
